@@ -11,6 +11,9 @@ export class AppComponent {
 
   constructor(public _ps: PeliculasService) {
     _ps.getPopulares()
-      .subscribe(data => console.log(data.results));
+      .subscribe(data => console.log('Populares: ', data.results));
+
+    _ps.buscarPelicula('avatar')
+      .subscribe(data => console.log('Película: ', data.results));
   }
 }
