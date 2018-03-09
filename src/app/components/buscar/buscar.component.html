@@ -1,3 +1,26 @@
-<p>
-  buscar works!
-</p>
+<div class="container" style="padding-top: 70px;" *ngIf="!loading">
+
+  <div class="card">
+    <h5 class="card-header">{{ pelicula.title }} <small>({{ pelicula.release_date | date:'y' }})</small></h5>
+    <div class="card-body">
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <img class="img-thumbnail" [src]="_ps.urlImages + pelicula.poster_path" [alt]="pelicula.title">
+        </div>
+
+        <div class="col-md-8">
+          <h5 class="card-title">Sinopsis</h5>
+          <hr>
+          <p class="lead" style="text-align: justify;font-size: unset;">{{ pelicula.overview }}</p>
+          <a href="# " class="btn btn-primary ">Go somewhere</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="alert alert-warning" role="alert">
+    <strong>Cargando...</strong> por favor espere.
+  </div>

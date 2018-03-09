@@ -9,19 +9,40 @@ import { Pelicula } from '../../interfaces/pelicula';
 })
 export class HomeComponent implements OnInit {
 
-  peliculas: any[] = [];
+  peliculasCartelera: any[] = [];
+  peliculasPopulares: any[] = [];
+  peliculasPopularesInfantiles: any[] = [];
 
-  constructor(public _ps: PeliculasService) { this.obtenerPopulares(); }
+  constructor(public _ps: PeliculasService) {
+    this.obtenerEnCartelera();
+    this.obtenerPopulares();
+    this.obtenerPopularesInfantiles();
+  }
 
   ngOnInit() {
+  }
+
+  obtenerEnCartelera() {
+    this._ps.peliculasCartelera()
+      .subscribe(data => {
+        this.peliculasCartelera = data.results;
+        console.log('Películas cartelera: ', this.peliculasCartelera);
+      });
   }
 
   obtenerPopulares() {
     this._ps.getPopulares()
       .subscribe(data => {
-        // console.log('Populares: ', data.results);
-        this.peliculas = data.results;
-        console.log('Películas: ', this.peliculas);
+        this.peliculasPopulares = data.results;
+        // console.log('Películas populares: ', this.peliculasPopulares);
+      });
+  }
+
+  obtenerPopularesInfantiles() {
+    this._ps.getPopularesInfantiles()
+      .subscribe(data => {
+        this.peliculasPopularesInfantiles = data.results;
+        // console.log('Populares infantiles: ', this.peliculasPopularesInfantiles);
       });
   }
 }
