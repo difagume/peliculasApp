@@ -1,0 +1,26 @@
+div.media{
+    width:1000px;
+    margin:0 auto;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+div.media section div.first img {
+    float: left;
+    padding: 0;
+}
+
+img.backdrop{
+    width:100%;
+    height:100%;
+}
+
+.fade{
+    will-change:opacity;
+    opacity:0;
+    transition:opacity 200ms;
+}
+
+.fade.lazyloaded {
+    opacity: 1;
+}

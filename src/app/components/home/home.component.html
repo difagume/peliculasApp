@@ -5,9 +5,193 @@
   </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
 
   <h2>Películas en cartelera</h2>
   <hr>
 
+  <div *ngFor="let pelicula of peliculas | slice:0:5">
+    <img [src]="_ps.urlImages + pelicula?.poster_path" alt=" ... " class="img-thumbnail ">
+    <p>{{ pelicula.title }}</p>
+  </div>
+
+</div> -->
+
+
+<div class="media">
+  <section class="index tv" *ngFor="let pelicula of peliculas | slice:0:5">
+    <div class="column">
+      <div class="info first">
+
+
+        <img [src]="_ps.urlImages + pelicula?.poster_path" sizes="500px" alt=" ... " class="backdrop fade lazyautosizes lazyloaded">
+        <!-- <p>{{ pelicula.title }}</p> -->
+
+        <!-- <img class="backdrop fade lazyautosizes lazyloaded" data-sizes="auto" data-src="https://image.tmdb.org/t/p/w500_and_h282_face/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg"
+          data-srcset="https://image.tmdb.org/t/p/w500_and_h282_face/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg 1x, https://image.tmdb.org/t/p/w1000_and_h563_face/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg 2x"
+          alt="The Walking Dead" sizes="500px" srcset="https://image.tmdb.org/t/p/w500_and_h282_face/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg 1x, https://image.tmdb.org/t/p/w1000_and_h563_face/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg 2x"
+          src="https://image.tmdb.org/t/p/w500_and_h282_face/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg"> -->
+      </div>
+
+
+
+
+      <div class="info second">
+        <a href="/tv/1403">
+
+
+
+          <img class="backdrop fade lazyautosizes lazyloaded" data-sizes="auto" data-src="https://image.tmdb.org/t/p/w250_and_h141_face/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg"
+            data-srcset="https://image.tmdb.org/t/p/w250_and_h141_face/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg 2x"
+            alt="Marvel's Agentes de S.H.I.E.L.D." sizes="250px" srcset="https://image.tmdb.org/t/p/w250_and_h141_face/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg 2x"
+            src="https://image.tmdb.org/t/p/w250_and_h141_face/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg">
+
+
+
+
+        </a>
+        <span>
+          <a class="text" href="/tv/1403">
+            <h3>Marvel's Agentes de S.H.I.E.L.D.</h3>
+          </a>
+          <a class="text" alt="Season 5, Episode 12" title="Season 5, Episode 12" href="/tv/1403/season/5/episode/12">
+            <p>El nuevo episodio se retransmite mañana.</p>
+          </a>
+        </span>
+      </div>
+
+
+
+
+      <div class="info third">
+        <a href="/tv/60735">
+
+
+
+          <img class="backdrop fade lazyautosizes lazyloaded" data-sizes="auto" data-src="https://image.tmdb.org/t/p/w250_and_h141_face/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg"
+            data-srcset="https://image.tmdb.org/t/p/w250_and_h141_face/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg 2x"
+            alt="The Flash" sizes="250px" srcset="https://image.tmdb.org/t/p/w250_and_h141_face/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg 2x"
+            src="https://image.tmdb.org/t/p/w250_and_h141_face/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg">
+
+
+
+
+        </a>
+        <span>
+          <a class="text" href="/tv/60735">
+            <h3>The Flash</h3>
+          </a>
+          <a class="text" alt="Season 4, Episode 16" title="Season 4, Episode 16" href="/tv/60735/season/4/episode/16">
+            <p>El nuevo episodio se retransmite en 4 días</p>
+          </a>
+        </span>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+  <section class="index movie">
+    <h2>
+      <a href="/movie/now-playing">En Cines</a>
+    </h2>
+    <div class="column">
+
+
+      <div class="info second">
+        <a href="/movie/337167">
+
+
+
+          <img class="backdrop fade lazyautosizes lazyloaded" data-sizes="auto" data-src="https://image.tmdb.org/t/p/w250_and_h141_face/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg"
+            data-srcset="https://image.tmdb.org/t/p/w250_and_h141_face/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg 2x"
+            alt="Cincuenta sombras liberadas" sizes="250px" srcset="https://image.tmdb.org/t/p/w250_and_h141_face/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg 2x"
+            src="https://image.tmdb.org/t/p/w250_and_h141_face/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg">
+
+
+
+
+        </a>
+        <span>
+          <a class="text" href="/movie/337167">
+            <h3>Cincuenta sombras liberadas</h3>
+
+            <p>Dakota Johnson, Jamie Dornan</p>
+          </a>
+        </span>
+      </div>
+
+
+
+      <div class="info third">
+        <a href="/movie/401981">
+
+
+
+          <img class="backdrop fade lazyautosizes lazyloaded" data-sizes="auto" data-src="https://image.tmdb.org/t/p/w250_and_h141_face/sGzuQYSTwJvLBc2PnuSVLHhuFeh.jpg"
+            data-srcset="https://image.tmdb.org/t/p/w250_and_h141_face/sGzuQYSTwJvLBc2PnuSVLHhuFeh.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/sGzuQYSTwJvLBc2PnuSVLHhuFeh.jpg 2x"
+            alt="Gorrión rojo" sizes="250px" srcset="https://image.tmdb.org/t/p/w250_and_h141_face/sGzuQYSTwJvLBc2PnuSVLHhuFeh.jpg 1x, https://image.tmdb.org/t/p/w500_and_h282_face/sGzuQYSTwJvLBc2PnuSVLHhuFeh.jpg 2x"
+            src="https://image.tmdb.org/t/p/w250_and_h141_face/sGzuQYSTwJvLBc2PnuSVLHhuFeh.jpg">
+
+
+
+
+        </a>
+        <span>
+          <a class="text" href="/movie/401981">
+            <h3>Gorrión rojo</h3>
+
+            <p>Joel Edgerton, Jennifer Lawrence</p>
+          </a>
+        </span>
+      </div>
+
+      <div class="clear"></div>
+
+
+      <div class="info first">
+        <a href="/movie/284054">
+
+
+
+          <img class="backdrop fade lazyautosizes lazyloaded" data-sizes="auto" data-src="https://image.tmdb.org/t/p/w500_and_h282_face/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg"
+            data-srcset="https://image.tmdb.org/t/p/w500_and_h282_face/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg 1x, https://image.tmdb.org/t/p/w1000_and_h563_face/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg 2x"
+            alt="Black Panther" sizes="500px" srcset="https://image.tmdb.org/t/p/w500_and_h282_face/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg 1x, https://image.tmdb.org/t/p/w1000_and_h563_face/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg 2x"
+            src="https://image.tmdb.org/t/p/w500_and_h282_face/b6ZJZHUdMEFECvGiDpJjlfUWela.jpg">
+
+
+
+
+        </a>
+        <span>
+
+          <a href="/movie/284054">
+
+
+
+            <img class="poster fade lazyautosizes lazyloaded" data-sizes="auto" data-src="https://image.tmdb.org/t/p/w58_and_h87_bestv2/uxzzxijgPIY7slzFvMotPv8wjKA.jpg"
+              data-srcset="https://image.tmdb.org/t/p/w58_and_h87_bestv2/uxzzxijgPIY7slzFvMotPv8wjKA.jpg 1x, https://image.tmdb.org/t/p/w116_and_h174_bestv2/uxzzxijgPIY7slzFvMotPv8wjKA.jpg 2x"
+              alt="Black Panther" sizes="58px" srcset="https://image.tmdb.org/t/p/w58_and_h87_bestv2/uxzzxijgPIY7slzFvMotPv8wjKA.jpg 1x, https://image.tmdb.org/t/p/w116_and_h174_bestv2/uxzzxijgPIY7slzFvMotPv8wjKA.jpg 2x"
+              src="https://image.tmdb.org/t/p/w58_and_h87_bestv2/uxzzxijgPIY7slzFvMotPv8wjKA.jpg">
+
+
+
+
+          </a>
+
+          <div class="content">
+            <a class="text" href="/movie/284054">
+              <h3>Black Panther</h3>
+
+              <p>Michael B. Jordan, Chadwick Boseman, Lupita Nyong'o</p>
+            </a>
+          </div>
+        </span>
+      </div>
+
+
+    </div>
+  </section>
+  <div class="clear"></div>
 </div>
