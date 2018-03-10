@@ -1,26 +1,26 @@
-<div class="container" style="padding-top: 70px;" *ngIf="!loading">
+<div class="container" style="padding-top: 70px;">
 
-  <div class="card">
-    <h5 class="card-header">{{ pelicula.title }} <small>({{ pelicula.release_date | date:'y' }})</small></h5>
-    <div class="card-body">
+    <div class="form-group row">
+        <label for="inputBuscar" class="col-sm-2 col-form-label">Buscar:</label>
+        <div class="col-sm-10">
 
-      <div class="row">
-
-        <div class="col-md-4">
-          <img class="img-thumbnail" [src]="_ps.urlImages + pelicula.poster_path" [alt]="pelicula.title">
+            <input #buscarTexto (keyup.enter)="_ps.buscarPeliculas(buscarTexto.value)" [(ngModel)]="_ps.titulo" type="text" class="form-control"
+                id="inputBuscar" placeholder="Buscar película...">
         </div>
-
-        <div class="col-md-8">
-          <h5 class="card-title">Sinopsis</h5>
-          <hr>
-          <p class="lead" style="text-align: justify;font-size: unset;">{{ pelicula.overview }}</p>
-          <a href="# " class="btn btn-primary ">Go somewhere</a>
-        </div>
-
-      </div>
     </div>
-  </div>
 
-  <div *ngIf="loading" class="alert alert-warning" role="alert">
-    <strong>Cargando...</strong> por favor espere.
-  </div>
+    <div class="card-columns">
+        <div class="card animated fadeIn fast" *ngFor="let pelicula of _ps.peliculas">
+
+            <img class="card-img-top" [src]="_ps.urlImages + pelicula.poster_path" [alt]="pelicula.title">
+
+            <div class="card-body">
+                <h5 class="card-title">{{ pelicula.title }}</h5>
+                <p class="card-text overview">{{ pelicula.overview }}</p>
+                <p class="card-text">
+                    <small class="text-muted">{{ pelicula.release_date }}</small>
+                </p>
+                <a [routerLink]="['/pelicula', pelicula.id]" class="btn btn-outline-primary btn-block">Ver mas...</a>
+            </div>
+        </div>
+    </div>

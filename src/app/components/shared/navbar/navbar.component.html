@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" [routerLink]="[ 'home' ]">
     <img src="/assets/movie.png" width="30" height="30" class="d-inline-block align-top" alt=""> pelisApp
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -18,8 +18,12 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
+      <input #buscarTexto (keyup.enter)="buscarPeliculas(buscarTexto.value)" [(ngModel)]="_ps.titulo" name="buscar" class="form-control mr-sm-2"
+        type="search" placeholder="Buscar" aria-label="Buscar">
+
+      <button class="btn btn-outline-light my-2 my-sm-0" type="button" (click)="buscarPeliculas(buscarTexto.value)">
+        Buscar
+      </button>
     </form>
   </div>
 </nav>

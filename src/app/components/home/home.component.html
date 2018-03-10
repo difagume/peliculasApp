@@ -13,7 +13,7 @@
   <div class="card-columns">
     <div class="card animated fadeIn fast" *ngFor="let pelicula of peliculasCartelera | slice:0:6">
 
-      <a [routerLink]="[ '/buscar', pelicula.id ]">
+      <a [routerLink]="[ '/pelicula', pelicula.id ]">
         <img class="card-img-top" [src]="_ps.urlImages + pelicula?.backdrop_path" [alt]="pelicula.title">
       </a>
       <div class="card-body">
@@ -31,7 +31,7 @@
   <div class="card-columns">
     <div class="card animated fadeIn fast" *ngFor="let pelicula of peliculasPopulares | slice:0:6">
 
-      <a [routerLink]="[ '/buscar', pelicula.id ]">
+      <a [routerLink]="[ '/pelicula', pelicula.id ]">
         <img class="card-img-top" [src]="_ps.urlImages + pelicula?.backdrop_path" [alt]="pelicula.title">
       </a>
       <div class="card-body">
@@ -48,8 +48,8 @@
   <div class="card-columns">
     <div class="card animated fadeIn fast" *ngFor="let pelicula of peliculasPopularesInfantiles | slice:0:6">
 
-      <a [routerLink]="[ '/buscar', pelicula.id ]">
-      <img class="card-img-top" [src]="_ps.urlImages + pelicula?.backdrop_path" [alt]="pelicula.title">
+      <a [routerLink]="[ '/pelicula', pelicula.id ]">
+        <img class="card-img-top" [src]="_ps.urlImages + pelicula?.backdrop_path" [alt]="pelicula.title">
       </a>
       <div class="card-body">
         <h5 class="card-title title">{{ pelicula.title }}</h5>
