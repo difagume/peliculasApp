@@ -29,6 +29,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Pasos para publicar
 https://www.npmjs.com/package/angular-cli-ghpages
+ng build --prod --base-href "https://USERNAME.github.io/REPOSITORY/"
+ngh
 
 ## Publicado
 
